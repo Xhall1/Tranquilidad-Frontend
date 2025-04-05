@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/musicoterapia/Header/style.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>tranquilidad</title>
+    <script>
+      async function includeHTML() {
+          const elements = document.querySelectorAll('[include-html]');
+          for (let el of elements) {
+              const file = el.getAttribute('include-html');
+              try {
+                  const response = await fetch(file);
+                  if (response.ok) {
+                      el.innerHTML = await response.text();
+                      // Cargar el JS del footer después de insertarlo
+                      if (file.includes("header.html")) {
+                          const script = document.createElement("script");
+                          script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                          document.body.appendChild(script);
+                      }
+                  } else {
+                      el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                  }
+              } catch (error) {
+                  el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+              }
+          }
+      }
+      document.addEventListener("DOMContentLoaded", includeHTML);
+  </script>
+
+
+</head>
+<body>
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+    <div class="container">
+      <aside class="sidebar">
+        <br>
+        <br>
+        <div class="menu-item">
+          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html" style="text-decoration: none;">
+            <img src="/musicoterapia/Vistas1.1/images/genero.png" alt="Icon">
+            <span>Géneros</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html" style="text-decoration: none;">
+            <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icon">
+            <span>Álbum</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html" style="text-decoration: none;">
+            <img src="/musicoterapia/Vistas1.1/images/pod.png" alt="Icon">
+            <span>Podcast</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html" style="text-decoration: none;">
+            <img src="/musicoterapia/Vistas1.1/images/binaural.png" alt="Icon">
+            <span>Sonidos Binaurales</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="/musicoterapia/Vistas1.1/PLAYLIST/playList.html" style="text-decoration: none;">
+            <img src="/musicoterapia/Vistas1.1/images/playL.png" alt="Icon">
+            <span>PlayList</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PISTAS/Tus me gustas pistas.html">
+            <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icon">
+            <span>Me gusta</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="/musicoterapia/Vistas1.1/PRINCIPAL_BUSCAR/buscar.html" style="text-decoration: none;">
+            <img src="/musicoterapia/Vistas1.1/images/buscar boton.png" alt="Buscar Icon">
+            <span>Buscar</span>
+          </a>
+        </div>
+      </aside>
+      <main class="main-content">
+        <div class="title">
+          <span>Tus me Gusta</span>
+          <br>
+          <br>
+        </div>
+
+        <div class="image-container">
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCAST 1.png" alt="fondoOndas" />
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 2.png" alt="fondoOndas" />
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 3.png" alt="fondoOndas" />
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 4.png" alt="fondoOndas" />
+          <img id="carousel-image" src="/musicoterapia/Vistas1.1/images/CARRUSEL PODCASTS 5.png" alt="fondoOndas" />
+        </div>
+        <div class="tabs">
+          <a href="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PISTAS/Tus me gustas pistas.html" class="tabs-pistas-podcast">Pistas</a>
+          <a href="/musicoterapia/Vistas1.1/TUS_ME_GUSTA_PODCAST/Tus me gusta podcast.html" class="tabs-pistas-podcast">Podcast</a>
+        </div>
+
+        <div class="content">
+          <div class="tracks-container">
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/podcast1.jpg"
+                alt="podcast1"
+              />
+              <div>
+                <span>Podcast 1</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html" class="play-button"></a>
+            </div>
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/podcast2.jpeg"
+                alt="podcast2"
+              />
+              <div>
+                <span>Podcast 2</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html" class="play-button"></a>
+            </div>
+
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/Podcast3.jpg"
+                alt="Podcast3"
+              />
+              <div>
+                <span>Podcast 3</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html" class="play-button"></a>
+            </div>
+
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/Podcast4.jpeg"
+                alt="Podcast4"
+              />
+              <div>
+                <span>Podcast 4</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html" class="play-button"></a>
+            </div>
+
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/Podcast5.jpeg"
+                alt="Podcast5"
+              />
+              <div>
+                <span>Podcast 5</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html" class="play-button"></a>
+            </div>
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/podcast6.jpg"
+                alt="podcast6"
+              />
+              <div>
+                <span>Podcast 6</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html" class="play-button"></a>
+            </div>
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/podcast7.jpg"
+                alt="podcast7"
+              />
+              <div>
+                <span>Podcast 7</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html" class="play-button"></a>
+            </div>
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/podcast8.jpg"
+                alt="podcast8"
+              />
+              <div>
+                <span>Podcast 8</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html" class="play-button"></a>
+            </div>
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/podcast9.jpg"
+                alt="podcast9"
+              />
+              <div>
+                <span>Podcast 9</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="vistas_podcast1.html" class="play-button"></a>
+            </div>
+            <div class="track">
+              <img
+                src="/musicoterapia/Vistas1.1/img/podcast10.jpg"
+                alt="podcast10"
+              />
+              <div>
+                <span>Podcast 10</span><br />
+                <span>Artista</span>
+              </div>
+              <div>Álbum</div>
+              <div>11/07/2024</div>
+              <div><span class="me-gusta" onclick="toggleLike(this)">❤</span></div>
+              <a href="/musicoterapia/Vistas1.1/REPRODUCCTORES/REPRO_PODCAST/Reproductorpodcast.html" class="play-button"></a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+<div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+
+<script src="../TUS_ME_GUSTA_PODCAST/scrip.js"></script>
+
+</body>
+</html>

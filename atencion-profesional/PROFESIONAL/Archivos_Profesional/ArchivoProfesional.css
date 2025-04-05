@@ -1,0 +1,172 @@
+/* Header */
+
+
+
+/* Estilos generales del menú hamburguesa */
+
+
+
+/* estilos del body */
+
+* {
+  box-sizing: border-box; /* Evita problemas de tamaño con márgenes y bordes */
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/archivo.png'); /* Cambia por la ruta de tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
+  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
+  background-color: rgba(255, 255, 255, 0.8); /* Color de fondo blanco con transparencia */
+  background-blend-mode: overlay; /* Mezcla el color con la imagen */
+}
+
+main {
+  flex: 1;
+  padding: 1.25rem; /* 20px */
+  background-color: #ffffff;
+  margin-top: 6.25rem; /* 100px */
+}
+
+.files-section h2 {
+  margin-top: 0;
+  margin-left: 0.9375rem; /* 15px */
+}
+
+.files-section{
+  margin-bottom: 100px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.625rem; /* 10px */
+  box-sizing: border-box;
+}
+
+.search-bar {
+  flex: 1;
+  padding: 0.625rem; /* 10px */
+  font-size: 1rem; /* 16px */
+  border: 0.125rem solid #59009A; /* 2px */
+  border-radius: 0.3125rem 0 0 0.3125rem; /* 5px */
+  outline: none;
+}
+
+.search-button {
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  font-size: 1rem; /* 16px */
+  background-color: #59009A;
+  color: #fff;
+  border: 0.125rem solid #59009A; /* 2px */
+  border-left: none; /* Eliminar el borde izquierdo del botón */
+  border-radius: 0 0.3125rem 0.3125rem 0; /* Bordes redondeados, solo para la derecha */
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #7a3ec8;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 0; /* 10px 0 */
+  border-top: 0.0625rem solid #ddd; /* 1px */
+}
+
+.file-item:first-of-type {
+  border-top: none;
+}
+
+.imagen {
+  width: 4.375rem; /* 70px */
+  height: 5.625rem; /* 90px */
+}
+
+.file-icon img {
+  margin-right: 0.625rem; /* 10px */
+}
+
+.settings-icon {
+  justify-content: flex-end;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+}
+
+.settings-icon img {
+  justify-content: flex-end;
+  width: 2.5rem; /* 40px */
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: 2.5rem; /* 40px */
+}
+
+.cargar {
+  display: block;
+  padding: 0.625rem 1.875rem; /* 10px 30px */
+  background-color: #59009A;
+  color: #fff;
+  border: none;
+  border-radius: 1.875rem; /* 30px */
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 1.25rem; /* 20px */
+  justify-content: center;
+}
+
+.cargar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Modal general */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo en la pantalla */
+  z-index: 1000; /* Se muestra por encima de otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  overflow: auto; /* Habilita el scroll si es necesario */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 2.5rem auto; /* Ajustado para centrar verticalmente */
+  padding: 1.25rem; /* 20px */
+  border: 1px solid #888;
+  width: 90%; /* Ancho del modal */
+  max-width: 900px; /* Ancho máximo del modal */
+  max-height: 80vh; /* Altura máxima del modal */
+  overflow: hidden; /* Ocultar contenido que desborde */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra alrededor del modal */
+  border-radius: 0.625rem; /* Bordes redondeados */
+}
+/* Contenido del iframe */
+.modal-content iframe {
+  border: none; /* Sin borde para el iframe */
+  width: 100%;
+  height: 70vh; /* Altura del visor de PDF */
+}
+
+
+/* Footer */
+
+/* Elimina márgenes y padding de todos los elementos */

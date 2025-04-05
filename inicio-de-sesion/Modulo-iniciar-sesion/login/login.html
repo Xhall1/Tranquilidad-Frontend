@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio de sesión</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+  <div class="contenedorCrearcuenta">
+    <!-- contenedor de ingresar -->
+    <div class="ingresar">
+      <div class="contenedorLogo">
+        <img src="/mapa-de-suenos/imagenes/6aa3987c-48ce-4355-b6bf-26c76c37e93d-removebg.png" alt="" />
+      </div>
+      <div class="contenedorH2">
+        <h2>¡Bienvenido De Nuevo!</h2>
+      </div>
+      <div class="contenedorP">
+        <p>Para mantenerse conectado, inicie sesión con su información personal.</p>
+      </div>
+    </div>
+    <!-- contenedor de crear cuenta -->
+    <div class="crearCuenta">
+      <div class="contenedorIngresar">
+        <h1>Iniciar sesión</h1>
+        <p>Ingresa tus datos</p>
+        <form class="registrarse" id="loginForm">
+          <div class="inputGrupo">
+            <input type="email" id="email" placeholder="Correo:" required />
+          </div>
+          <div class="inputGrupo">
+            <input type="password" id="password" placeholder="Contraseña:" required />
+          </div>
+          <div class="btnRegistro">
+            <button type="submit" class="button">
+              <h3>Ingresar</h </button>
+          </div>
+        </form>
+        <div id="message" style="text-align: center; margin-top: 10px;"></div> <!-- Added for feedback -->
+      </div>
+      <a href="/inicio-de-sesion/Modulo-iniciar-sesion/mensajes/recuperarContraseña2.html">¿Olvidaste tu contraseña?</a>
+      <a href="/inicio-de-sesion/Modulo-iniciar-sesion/registroProfesional/registroProfesional.html">Registrarse como
+        profesional</a>
+      <a href="/inicio-de-sesion/Modulo-iniciar-sesion/registro/registro.html">Regístrate</a>
+      <div class="redes">
+        <div class="contenedorRedes">
+          <a href="#"><img src="imagenes/imagenes/facebookLogo.png" alt="Facebook" /></a>
+        </div>
+        <div class="contenedorRedes">
+          <a href="#"><img src="imagenes/imagenes/gmail.png" alt="Google" /></a>
+        </div>
+        <div class="contenedorRedes">
+          <a href="#"><img src="imagenes/imagenes/Apple.png" alt="Apple" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./fetch.js"></script> <!-- Ensure this matches your file name -->
+</body>
+
+</html>

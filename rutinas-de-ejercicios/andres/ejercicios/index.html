@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="Style.css">
+  <script>
+    async function includeHTML() {
+        const elements = document.querySelectorAll('[include-html]');
+        for (let el of elements) {
+            const file = el.getAttribute('include-html');
+            try {
+                const response = await fetch(file);
+                if (response.ok) {
+                    el.innerHTML = await response.text();
+                    // Cargar el JS del footer después de insertarlo
+                    if (file.includes("header.html")) {
+                        const script = document.createElement("script");
+                        script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                        document.body.appendChild(script);
+                    }
+                } else {
+                    el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                }
+            } catch (error) {
+                el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", includeHTML);
+</script>
+
+  <title>Atención Profesional</title>
+</head>
+<div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+<body>
+
+
+    <main>
+        <div class="marca-agua">
+        <div class="card-container">
+            <div class="card">
+                <a href="/rutinas-de-ejercicios/detalles/index.html">
+                <img src="/rutinas-de-ejercicios/detalles/sportswoman-stretching-her-back-white-copyspace.jpg" alt="" class="refe">
+            
+                <h2>Estiramiento de torso</h2>
+                <p>05:00 </p>
+            </a>
+            </div>
+            <div class="card">
+                <a href="/rutinas-de-ejercicios/estiramiento/detalles2/index.html">
+                <img src="/rutinas-de-ejercicios/andres/ejercicios/imagenes/close-up-hand-stretching-foot.jpg" alt="" class="refe">
+         
+                <h2>Estiramiento de tobillos</h2>
+                <p>05:00 </p>
+            </a>
+            </div>
+            <div class="card">
+                <a href="/rutinas-de-ejercicios/estiramiento/detalles3/index.html">
+                <img src="/rutinas-de-ejercicios/andres/ejercicios/imagenes/front-view-woman-doing-physiotherapy-exercises-neck.jpg" alt="" class="refe">
+                <h2>Estiramiento de cuello</h2>
+                <p>05:00 </p>
+            </a>
+            </div>
+            <div class="card">
+                <a href="/rutinas-de-ejercicios/estiramiento/detalles4/index.html">
+                <img src="/rutinas-de-ejercicios/andres/ejercicios/imagenes/high-angle-woman-sitting-floor.jpg" class="refe">
+                <h2>Estiramiento mariposa </h2>
+                <p>05:00 </p>
+            </a>
+            </div>
+            <div class="card">
+                <a href="/rutinas-de-ejercicios/estiramiento/detalles5/index.html">
+                <img src="/rutinas-de-ejercicios/andres/ejercicios/imagenes/portrait-smiling-fitness-woman-stretching-her-hands-white-wall.jpg" alt="" class="refe">
+                <h2>Estiramiento de brazo</h2>
+                <p>05:00 </p>
+            </a>
+            </div>
+            <div class="go">
+              <a href="/rutinas-de-ejercicios/reproEstiramiento/index.html">
+          <button class="boton">comenzar</button>
+      </a>
+      </div>
+        </div>
+    </div>
+    </main>
+   
+
+    <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+</body>
+</html>

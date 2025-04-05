@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../Stylee.css">
+  <link rel="stylesheet" href="/mapa-de-suenos/todohh/style.css">
+  <link rel="stylesheet" href="/mapa-de-suenos/todohh/inicio/styles.css">
+
+  <title>Mapa de sueños</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+ 
+<main class="main">
+  <div class="book">
+    <img src="https://www.elejandria.com/covers/El_Camino_de_la_Prosperidad-James_Allen-md.png" alt="The Picture of Dorian Gray">
+    <div class="book-info">
+        <h1>El camino de la prosperidad</h1>
+        <p><strong>Autor:</strong> James Allen</p>
+        <p><strong>Editorial:</strong>  Obelisco</p>
+        <p><strong>Enlace:</strong> <a class="linklibro" href="https://www.elejandria.com/libro/el-camino-de-la-prosperidad/james-allen/1876">Link</a></p>
+      <p class="description"><strong>Descripción:</strong> El Camino de la Prosperidad es un  libro de autoayuda y superación personal escrito por James Allen y publicado originalmente en 1901. En este  libro, James Allen ofrece una guía sobre cómo encontrar la paz y la prosperidad cambiando tus propias actitudes y reacciones ante los desafíos de la vida. El autor afirma que "por tus propios pensamientos mejoras o estropeas tu vida, tu mundo, tu universo.".</p>
+      <div class="rating">
+        <div class="star" data-value="1"></div>
+        <div class="star" data-value="2"></div>
+        <div class="star" data-value="3"></div>
+        <div class="star" data-value="4"></div>
+        <div class="star" data-value="5"></div>
+        <span id="average-rating">0</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Comentarios -->
+  <div class="comentarios">
+    <!-- Formulario para agregar un comentario -->
+    <form id="formComentario">
+        <textarea id="comentarioInput" placeholder="Escribe tu comentario..."></textarea>
+        <div id="contadorLetras">0 caracteres</div>
+        <button type="submit">Comentar</button>
+        <button type="button" id="cancelarBtn" class="cancelacion">Cancelar</button>
+    </form>
+
+    <!-- Lista de comentarios -->
+    <ul id="listaComentarios">
+       
+    </ul>
+  </div>
+</main>
+
+<div id="footer"></div>
+<script src="/mapa-de-suenos/todohh/script.js"></script>   
+<script src="../script.js"></script>  
+</body>
+</html>

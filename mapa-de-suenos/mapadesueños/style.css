@@ -1,0 +1,275 @@
+    /* Estilos generales */
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+        margin: 0;
+    }
+             
+    .sidebar {
+        width: 100px;
+        background-color: #CCBAF2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        height: 647px; /* Establecer una altura fija */
+        border-radius: 13px;
+    }
+
+    .sidebar button {
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 22px;
+        padding: 10px;
+        font-size: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+ 
+
+    #canvas-container {
+        position: relative;
+        margin-left: 40px;
+        width: 90vw; /* 100% del ancho de la ventana */
+        height: 100vh; /* 100% del alto de la ventana */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Evita desplazamientos si el tamaño es mayor que la pantalla */
+    }
+    
+    #myCanvas {
+        width: 40%; /* Ajusta el tamaño del lienzo (80% del contenedor, puedes cambiar el valor) */
+        height: 70%; /* Ajusta el alto del lienzo (70% del contenedor, también puedes cambiar el valor) */
+        border: 1px solid rgba(126, 97, 143, 0.527); /* Borde alrededor del lienzo */
+    }
+    
+canvas {
+width: 100%; /* El lienzo se ajusta al ancho del contenedor */
+height: 100%; /* El lienzo se ajusta al alto del contenedor */
+display: block; /* Elimina el espacio extra alrededor del lienzo */
+}
+
+
+#canvas-container textarea {
+position: absolute; /* Asegura que el textarea se posicione sobre el lienzo */
+top: 100px; /* Ajusta este valor para mover el textarea hacia abajo */
+left: 100px; /* Ajusta este valor para mover el textarea hacia la derecha */
+width: 200px; /* Ancho del textarea */
+height: 50px; /* Altura del textarea */
+pointer-events: auto; /* Permite la interacción con el textarea */
+z-index: 10; /* Asegura que el textarea esté encima del lienzo */
+background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente blanco */
+border: 1px solid #ccc; /* Borde del textarea */
+font-size: 16px; /* Tamaño de texto */
+color: black; /* Color del texto */
+outline: none; /* Elimina el borde al hacer clic */
+padding: 5px; /* Espaciado interno */
+resize: none; /* Desactiva la opción de redimensionar el textarea */
+cursor: text; /* Cursor de texto para indicar que se puede escribir */
+}
+
+
+    /* Menús emergentes */
+    /* Menú emergente para stickers */
+.popup-menu {
+display: none;
+position: absolute;
+top: 80px;
+left: 100px;
+background-color: #fff;
+border: 1px solid #ddd;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+padding: 10px;
+z-index: 10;
+max-height: 80vh; /* Limita la altura del menú */
+overflow-y: auto; /* Permite desplazamiento vertical */
+}
+
+/* Estilo para el contenedor de stickers */
+.popup-menu.stickers {
+display: flex; /* Utiliza flexbox */
+flex-wrap: wrap; /* Permite que los stickers se envuelvan */
+max-height: 100px; /* Altura máxima para los stickers en línea */
+}
+
+/* Estilo para cada sticker */
+.popup-menu .sticker {
+width: 40px; /* Ancho de cada sticker */
+height: 40px; /* Alto de cada sticker */
+margin: 5px; /* Espacio entre stickers */
+background-color: transparent; /* Fondo transparente */
+cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+/* Estilo para el contenedor de formas */
+.popup-menu.shapes {
+display: flex; /* Utiliza flexbox */
+flex-direction: row; /* Alinea las formas en una fila */
+flex-wrap: nowrap; /* No permite el ajuste de líneas */
+overflow-x: auto; /* Desplazamiento horizontal si hay más formas */
+}
+
+/* Estilo de los botones de formas */
+.popup-menu button {
+background-color: transparent; /* Fondo transparente para que se vea la forma */
+border: none; /* Sin borde */
+cursor: pointer; /* Cambia el cursor al pasar el ratón */
+margin: 5px; /* Espacio entre los botones */
+padding: 0; /* Sin padding para que la forma se vea correctamente */
+display: flex; /* Para centrar el contenido */
+justify-content: center; /* Centrar contenido horizontalmente */
+align-items: center; /* Centrar contenido verticalmente */
+}
+
+/* Estilo para la forma cuadrada */
+.popup-menu .shape.square {
+width: 40px; /* Ancho del cuadrado */
+height: 40px; /* Alto del cuadrado */
+background-color: blue; /* Color de fondo */
+}
+
+/* Estilo para la forma circular */
+.popup-menu .shape.circle {
+width: 40px; /* Ancho del círculo */
+height: 40px; /* Alto del círculo */
+border-radius: 50%; /* Hace que el botón sea circular */
+background-color: red; /* Color de fondo */
+}
+
+/* Estilo para la forma triangular */
+.popup-menu .shape.triangle {
+width: 0; /* Ancho 0 para crear un triángulo */
+height: 0; /* Alto 0 para crear un triángulo */
+border-left: 20px solid transparent; /* Bordes para formar un triángulo */
+border-right: 20px solid transparent; /* Bordes para formar un triángulo */
+border-bottom: 40px solid green; /* Color del triángulo */
+}
+
+/* Estilo para forma personalizada */
+.popup-menu .shape.custom {
+width: 40px; /* Ancho de la forma personalizada */
+height: 25px; /* Alto de la forma personalizada */
+background-color: gray; /* Color de fondo */
+border: 1px solid #ccc; /* Borde */
+}
+
+
+.fullscreen-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000; /* Asegúrate de que está por encima de otros elementos */
+}
+   
+    /* Controles adicionales */
+    .drawing-controls, .eraser-controls {
+        display: none;
+        position: absolute;
+        top: 160px; /* Ajusta según sea necesario */
+        left: 80px; /* Ajusta según sea necesario */
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        z-index: 10;
+    }
+
+    .drawing-controls input[type="color"],
+    .drawing-controls input[type="range"],
+    .eraser-controls input[type="range"] {
+        margin-bottom: 10px;
+    }
+      /* Estilo para el canvas en modo pantalla completa */
+        .fullscreen-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            background-color: white;
+        }
+
+    #fullscreen-toggle {
+        position: fixed;
+        bottom: 10px;
+        right: 10px; /* Cambiado para estar a la derecha */
+        color: rgb(56, 56, 56);
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        z-index: 999;
+        cursor: pointer;
+    }
+
+    #fullscreen-toggle i {
+        font-size: 20px;
+    }
+   /* Barra de herramientas flotante */
+.toolbar {
+position: fixed; /* Fijo para que no se mueva al hacer scroll */
+top: 5px; /* Ajuste de posición en la parte superior */
+left: 100px; /* Un poco de espacio desde la izquierda */
+display: flex;
+justify-content: flex-start;
+background-color: #CCBAF2;
+padding: 10px;
+border-radius: 5px;
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra para efecto visual */
+z-index: 1000; /* Asegurarse de que esté por encima del lienzo */
+width: auto; /* Ajuste de ancho automático */
+max-width: 90%; /* Limita el ancho a un 90% de la pantalla */
+box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+}
+
+/* Estilo de los botones */
+.toolbar button {
+background-color: white;
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 5px;
+margin-right: 5px; /* Espacio entre los botones */
+cursor: pointer;
+font-size: 1px;
+transition: background-color 0.3s ease;
+height: 30px; /* Altura ajustada para mantener consistencia */
+}
+
+/* Iconos dentro de los botones */
+.toolbar button i {
+color: #333;
+font-size: 12px;
+}
+
+/* Efecto hover en los botones */
+.toolbar button:hover {
+background-color: #e0e0e0;
+}
+
+/* Responsive: ajusta el tamaño del texto y los botones en pantallas pequeñas */
+@media (max-width: 600px) {
+.toolbar {
+    top: 5px;
+    left: 5px;
+    padding: 8px;
+    width: calc(100% - 10px); /* Más ajustado en pantallas pequeñas */
+}
+
+.toolbar button {
+    font-size: 14px; /* Tamaño de texto más pequeño */
+    padding: 4px;
+    height: 35px; /* Altura ajustada en pantallas pequeñas */
+}
+}
+
+
+#colorPicker {
+    display: none; /* Se oculta inicialmente */
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dibujos</title>
+  <link rel="stylesheet" href="../Css/misDibujos.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="/FootNav/footNav.js"></script>
+  <link rel="stylesheet" href="/FootNav/footNav.css"> 
+  <link rel="stylesheet" href="../component/explore-section/explore-section.css">
+</head>
+<body class="body">
+  <div id="header-placeholder"></div>
+  <div id="explore-section-placeholder"></div>
+
+  <h2 class="titulo">Mis Dibujos</h2>
+
+  <main class="main">
+    <div class="bloque">
+      <img src="https://img.freepik.com/vector-gratis/color-decorativo-mandala_1284-8274.jpg?ga=GA1.1.911698666.1720704446&semt=ais_user" alt="Plantilla"><div class="iconos">
+        <span class="material-icons download-icon">download</span>
+        <span class="material-icons delete-icon">delete</span>
+      </div>
+    </div>
+    <div class="bloque">
+      <img src="https://img.freepik.com/vector-gratis/paisaje-montana-degradado_23-2149161561.jpg?ga=GA1.1.911698666.1720704446&semt=sph" alt="Plantilla"><div class="iconos">
+        <span class="material-icons download-icon">download</span>
+        <span class="material-icons delete-icon">delete</span>
+      </div>
+    </div>
+    <div class="bloque">
+      <img src="https://img.freepik.com/vector-gratis/ilustracion-vectorial-paisaje-montana_1441-77.jpg?ga=GA1.1.911698666.1720704446&semt=sph" alt="Plantilla"><div class="iconos">
+        <span class="material-icons download-icon">download</span>
+        <span class="material-icons delete-icon">delete</span>
+      </div>
+    </div>
+    <div class="bloque">
+      <img src="https://img.freepik.com/vector-gratis/mandala-colorido-estilo-hecho-mano_23-2147875742.jpg?ga=GA1.1.911698666.1720704446&semt=ais_user" alt="Plantilla"><div class="iconos">
+        <span class="material-icons download-icon">download</span>
+        <span class="material-icons delete-icon">delete</span>
+      </div>
+    </div>
+    <div class="bloque">
+      <img src="https://img.freepik.com/vector-gratis/salida-sol-ilustracion-concepto-montana_114360-14582.jpg?ga=GA1.1.911698666.1720704446&semt=sph" alt="Plantilla"><div class="iconos">
+        <span class="material-icons download-icon">download</span>
+        <span class="material-icons delete-icon">delete</span>
+      </div>
+    </div>
+    <div class="bloque">
+      <img src="https://img.freepik.com/vector-gratis/acuarela-lago-paisaje-temporada-otono_23-2149181555.jpg?ga=GA1.1.911698666.1720704446&semt=sph" alt="Plantilla"><div class="iconos">
+        <span class="material-icons download-icon">download</span>
+        <span class="material-icons delete-icon">delete</span>
+      </div>
+    </div>
+    <div class="bloque">
+      <img src="https://img.freepik.com/vector-gratis/mandala-colores_23-2147876822.jpg?ga=GA1.1.911698666.1720704446&semt=ais_user" alt="Plantilla"><div class="iconos">
+        <span class="material-icons download-icon">download</span>
+        <span class="material-icons delete-icon">delete</span>
+      </div>
+    </div>
+    <div class="bloque">
+      <img src="https://img.freepik.com/vector-gratis/diseno-fondo-aventura-plana_23-2149054485.jpg?ga=GA1.1.911698666.1720704446&semt=sph" alt="Plantilla"><div class="iconos">
+        <span class="material-icons download-icon">download</span>
+        <span class="material-icons delete-icon">delete</span>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bloques = document.querySelectorAll('.bloque');
+  
+      bloques.forEach(bloque => {
+        bloque.addEventListener('mouseenter', function() {
+          bloque.style.opacity = '0.8';
+        });
+  
+        bloque.addEventListener('mouseleave', function() {
+          bloque.style.opacity = '1';
+        });
+      });
+  
+      const searchButton = document.querySelector('.search-bar button');
+      
+      searchButton.addEventListener('click', function() {
+        searchButton.classList.add('clicked');
+        setTimeout(() => {
+          searchButton.classList.remove('clicked');
+        }, 300); 
+      });
+    });
+  </script>
+
+  <style>
+    .search-bar button.clicked {
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+  </style>
+  
+</body>
+</html>

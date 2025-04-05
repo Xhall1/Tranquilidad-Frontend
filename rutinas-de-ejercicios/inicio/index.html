@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>tranquilidad</title>
+    <script>
+      async function includeHTML() {
+          const elements = document.querySelectorAll('[include-html]');
+          for (let el of elements) {
+              const file = el.getAttribute('include-html');
+              try {
+                  const response = await fetch(file);
+                  if (response.ok) {
+                      el.innerHTML = await response.text();
+                      // Cargar el JS del footer después de insertarlo
+                      if (file.includes("header.html")) {
+                          const script = document.createElement("script");
+                          script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                          document.body.appendChild(script);
+                      }
+                  } else {
+                      el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                  }
+              } catch (error) {
+                  el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+              }
+          }
+      }
+      document.addEventListener("DOMContentLoaded", includeHTML);
+  </script>
+
+
+</head>
+<body>
+    
+ 
+  <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+  <div class="marca-agua">
+  <div class="container">
+    <aside class="sidebar">
+      <div class="menu-item active">
+        <a href="/rutinas-de-ejercicios/inicio/index.html">
+            <img src="/rutinas-de-ejercicios/imagenes/home_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+            <span>Inicio</span>
+        </a>
+    </div>
+      <div class="menu-item">
+        <a href="/rutinas-de-ejercicios/calendario/index.html">
+          <img src="/rutinas-de-ejercicios/imagenes/event_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+          <span>Calendario</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/rutinas-de-ejercicios/favoritos/favoritos.html">
+          <img src="/rutinas-de-ejercicios/imagenes/favorite_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+          <span href="#">Favoritos</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/rutinas-de-ejercicios/notificaciones/index.html">
+          <img src="/rutinas-de-ejercicios/imagenes/notifications_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+          <span href="#">Notificaciones</span>
+        </a>
+      </div>
+     
+    </aside>
+    <div class="imagen">
+        <div class="part1">
+     <div class="card" >
+       
+        
+        <a href="/rutinas-de-ejercicios/respiracion/index.html">
+            <img src="/rutinas-de-ejercicios/imagenes/imag1.jpg" alt="" class="imag">
+          </a>
+            <p>Tecnicas de respiracion</p>
+        </div>
+        <div class="card">
+          <a href="/rutinas-de-ejercicios/andres/ejercicios/index.html">
+            <img src="/rutinas-de-ejercicios/imagenes/imag2.jpg" alt="" class="imag">
+          </a>
+            <p>Estiramientos</p>
+          
+        </div>
+    </div>
+        <div class="part2">
+        <div  class="card"><a href="/rutinas-de-ejercicios/meditacion/index.html">
+            <img src="/rutinas-de-ejercicios/imagenes/imag3.jpg" alt="" class="imag">
+          </a>
+            <p>Meditacion</p>
+    
+        </div>
+    </div>
+    </div>
+</div>
+<br>
+
+</div>
+
+<div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/musicoterapia/Header/style.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Tranquilidad - Sonidos Binaurales</title>
+  <script>
+    async function includeHTML() {
+      const elements = document.querySelectorAll('[include-html]');
+      for (let el of elements) {
+        const file = el.getAttribute('include-html');
+        try {
+          const response = await fetch(file);
+          if (response.ok) {
+            el.innerHTML = await response.text();
+            if (file.includes("header.html")) {
+              const script = document.createElement("script");
+              script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+              document.body.appendChild(script);
+            }
+          } else {
+            el.innerHTML = "<p>Error al cargar el contenido.</p>";
+          }
+        } catch (error) {
+          el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+        }
+      }
+    }
+    document.addEventListener("DOMContentLoaded", includeHTML);
+  </script>
+</head>
+
+<body>
+  <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+  <div class="container">
+    <aside class="sidebar">
+      <br />
+      <br />
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_GENEROS/principal_generos.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/genero.png" alt="Icono de géneros" />
+          <span>Géneros</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_ALBUM/principal_album.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/album.png" alt="Icono de álbumes" />
+          <span>Álbum</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL_PODCAST/principal_podcast.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/pod.png" alt="Icono de podcasts" />
+          <span>Podcast</span>
+        </a>
+      </div>
+      <div class="menu-item active">
+        <a href="/musicoterapia/Vistas1.1/SONIDOS_BINAURALES/binaurales.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/binaural.png" alt="Icono de sonidos binaurales" />
+          <span>Sonidos Binaurales</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/PLAYLIST/playList.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/playL.png" alt="Icono de playlists" />
+          <span>PlayList</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/ME GUSTA/Tus me gustas pistas.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/like.png" alt="Icono de favoritos" />
+          <span>Me gusta</span>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="/musicoterapia/Vistas1.1/PRINCIPAL BUSCAR/buscar.html" style="text-decoration: none">
+          <img src="/musicoterapia/Vistas1.1/images/buscar boton.png" alt="Icono de búsqueda" />
+          <span>Buscar</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="title">
+        <span>Sonidos Binaurales</span>
+      </div>
+      <br>
+      <br>
+      <div class="image-container" style="position: relative;">
+        <img src="../imgBin/1.png" alt="Fondo de ondas binaurales" />
+        <div class="corner-text">ACTIVA TU CEREBRO</div>
+        <div class="bottom-left-text">
+          ONDAS GAMMA BINAURALES: Rendimiento Mental, Concentración y Memoria
+        </div>
+      </div>
+
+      <div class="image-container2">
+        <div class="content">
+          <div class="tracks-container" id="tracks-container">
+            <p>Cargando audios binaurales...</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

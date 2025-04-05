@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de Tareas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/mapa-de-suenos/todohh/inicio/styles.css">
+    <link rel="stylesheet" href="/mapa-de-suenos/todohh/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header"></div>
+    <main>
+    <div class="board">
+        <div class="column" id="tasks">
+            <h2>Tareas</h2>
+            <button id="add-task-btn">Añade una tarea</button>
+            <div id="tasks-list"></div>
+        </div>
+        <div class="column" id="in-progress">
+            <h2>Progreso</h2>
+            <div id="in-progress-list"></div>
+        </div>
+        <div class="column" id="completed">
+            <h2>Completado</h2>
+            <div id="completed-list"></div>
+        </div>
+    </div>
+
+    <!-- Formulario para añadir una tarea -->
+    <div id="task-form-overlay" class="overlay">
+        <div class="form-container">
+            <h3>Agregar Nueva Tarea</h3>
+            <label for="task-name">Nombre</label>
+            <input type="text" id="task-name" required>
+            <label for="task-desc">Descripción</label>
+            <textarea id="task-desc" required></textarea>
+            <label for="task-date">Fecha</label>
+            <input type="date" id="task-date" required>
+            <div class="form-buttons">
+            <button id="save-task-btn">Guardar Tarea</button>
+            <button id="cancel-task-btn">Cancelar</button>
+        </div>
+        </div>
+    </div>
+</main>
+<div id="footer"></div>
+    <script src="script.js"></script>
+    <script src="/mapa-de-suenos/todohh/script.js"></script>
+</body>
+</html>

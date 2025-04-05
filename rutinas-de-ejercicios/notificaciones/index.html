@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Document</title>
+    <script>
+        async function includeHTML() {
+            const elements = document.querySelectorAll('[include-html]');
+            for (let el of elements) {
+                const file = el.getAttribute('include-html');
+                try {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        el.innerHTML = await response.text();
+                        // Cargar el JS del footer después de insertarlo
+                        if (file.includes("header.html")) {
+                            const script = document.createElement("script");
+                            script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                            document.body.appendChild(script);
+                        }
+                    } else {
+                        el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                    }
+                } catch (error) {
+                    el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+                }
+            }
+        }
+        document.addEventListener("DOMContentLoaded", includeHTML);
+    </script>
+  
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+
+    <div class="marca-agua"> 
+    <div class="container">
+        <aside class="sidebar">
+            <div class="menu-item">
+                <a href="/rutinas-de-ejercicios/inicio/index.html">
+                    <img src="/rutinas-de-ejercicios/imagenes/home_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+                    <span>Inicio</span>
+                </a>
+            </div>
+            <div class="menu-item">
+              <a href="/rutinas-de-ejercicios/calendario/index.html">
+                <img src="/rutinas-de-ejercicios/imagenes/event_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+                <span>Calendario</span>
+              </a>
+            </div>
+            <div class="menu-item">
+              <a href="/rutinas-de-ejercicios/favoritos/favoritos.html">
+                <img src="/rutinas-de-ejercicios/imagenes/favorite_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+                <span href="#">Favoritos</span>
+              </a>
+            </div>
+            <div class="menu-item active">
+              <a href="/rutinas-de-ejercicios/notificaciones/index.html">
+                <img src="/rutinas-de-ejercicios/imagenes/notifications_24dp_434343_FILL0_wght400_GRAD0_opsz24.svg" alt="Icon" />
+                <span href="#">Notificaciones</span>
+              </a>
+            </div>
+           
+          </aside>
+
+            <div class="content">
+                <div class="titulo">
+                <h2>Notificaciones</h2></div>
+                <div class="notification">
+                    <p>Buenos días! ¿Listo para comenzar tu día con una sesión de estiramientos suaves?</p>
+                    <span class="time">07:14 AM</span>
+                </div>
+                <hr>
+                <div class="notification">
+                    <p>¡Es hora de estirarte! Dedica 10 minutos para un estiramiento suave.</p>
+                    <span class="time">09:26 AM</span>
+                </div>
+                <hr>
+                <div class="notification">
+                    <p>No olvides beber agua. Mantente hidratado para un mejor rendimiento.</p>
+                    <span class="time">11:11 AM</span>
+                </div>
+                <hr>
+                <div class="notification">
+                    <p>Cada pequeño paso cuenta. Sigue así, estás haciendo un gran trabajo.</p>
+                    <span class="time">12:12 AM</span>
+                </div>
+                <hr>
+                <div class="notification">
+                    <p>Hora de una breve meditación para calmar la mente. Encuentra un lugar tranquilo y relájate.</p>
+                    <span class="time">10:10 PM</span>
+                </div>
+                <hr>
+                <div class="notification">
+                    <p>Recuerda mantener una buena postura. ¡Es crucial para tu bienestar!</p>
+                    <span class="time">09:14 PM</span>
+                </div>
+                <hr>
+                
+            </div>
+        </div>
+
+    </div>
+        <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+        </body>
+        </html>

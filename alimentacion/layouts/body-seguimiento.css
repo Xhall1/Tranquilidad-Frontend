@@ -1,0 +1,63 @@
+/* body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('../inclued/ALIMENTACION22.jpg') no-repeat center center fixed; /* Imagen de marca de agua */
+    background-size: cover; /* La imagen cubre toda la pantalla */
+    background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
+    background-color: rgba(255, 245, 220, 0.8); /* Fondo translúcido */
+}
+
+main {
+    padding: 20px;
+    margin-top: 150px;
+}
+
+.section {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section h3 {
+    font-size: 18px;
+    color: white;
+    background-color: #59009A;
+    padding: 5px 10px;
+}
+
+canvas {
+    border: 1px solid #be5cb6;
+    width: 100% !important;
+    max-width: 600px;
+    height: 400px !important; /* Añadimos un alto para asegurar visibilidad */
+    margin: 0 auto;
+    display: block;
+}
+
+.section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.section table, .section th, .section td {
+    border: 1px solid #ddd;
+}
+
+.section th, .section td {
+    padding: 8px;
+    text-align: left;
+}
+
+.columna {
+    width: 50%;
+}

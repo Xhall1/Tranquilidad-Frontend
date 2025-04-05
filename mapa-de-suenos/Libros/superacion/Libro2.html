@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../Stylee.css">
+  <link rel="stylesheet" href="/mapa-de-suenos/todohh/style.css">
+  <link rel="stylesheet" href="/mapa-de-suenos/todohh/inicio/styles.css">
+
+  <title>Mapa de sueños</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+ 
+<main class="main">
+   <div class="book">
+    <img src="https://www.elejandria.com/covers/La_Ciencia_de_estar_bien-Wallace_Wattles-md.png" alt="The Picture of Dorian Gray">
+    <div class="book-info">
+        <h1>La ciencia de estar bien</h1>
+        <p><strong>Autor:</strong> Wallace Wattles</p>
+        <p><strong>Editorial:</strong> Libreria argentina</p>
+        <p><strong>Enlace:</strong> <a class="linklibro" href="https://www.elejandria.com/libro/la-ciencia-de-estar-bien/wallace-wattles/1806">Link</a></p>
+      <p class="description"><strong>Descripción:</strong> La Ciencia de estar bien es un  libro de autoayuda escrito por Wallace Wattles y publicado originalmente en el año 1910. Después de su trabajo en La ciencia de hacerse rico, Wattles aplica el pensamiento positivo para mejorar la salud de las personas. Es una guia práctica que detalla qué principios rigen la salud y da consejos para mejorarlos y convertirte en una persona más sana, y por consecuencia, más feliz.</p>
+      <div class="rating">
+        <div class="star" data-value="1"></div>
+        <div class="star" data-value="2"></div>
+        <div class="star" data-value="3"></div>
+        <div class="star" data-value="4"></div>
+        <div class="star" data-value="5"></div>
+        <span id="average-rating">0</span>
+      </div>
+    </div>
+  </div>
+
+   
+  <!-- Comentarios -->
+  <div class="comentarios">
+    <!-- Formulario para agregar un comentario -->
+    <form id="formComentario">
+        <textarea id="comentarioInput" placeholder="Escribe tu comentario..."></textarea>
+        <div id="contadorLetras">0 caracteres</div>
+        <button type="submit">Comentar</button>
+        <button type="button" id="cancelarBtn" class="cancelacion">Cancelar</button>
+    </form>
+
+    <!-- Lista de comentarios -->
+    <ul id="listaComentarios">
+       
+    </ul>
+  </div>
+</main>
+
+<div id="footer"></div>
+<script src="/mapa-de-suenos/todohh/script.js"></script>  
+<script src="../script.js"></script>  
+</body>
+</html>

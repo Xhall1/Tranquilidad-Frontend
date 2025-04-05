@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../Stylee.css">
+  <link rel="stylesheet" href="/mapa-de-suenos/todohh/style.css">
+  <link rel="stylesheet" href="/mapa-de-suenos/todohh/inicio/styles.css">
+
+  <title>Mapa de sueños</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+<main class="main">
+  <div class="book">
+    <img src="https://cdn.pixabay.com/photo/2018/06/13/20/07/child-3473596_960_720.jpg" alt="The Picture of Dorian Gray">
+    <div class="book-info">
+        <h1>Filosofia de la naturaleza humana</h1>
+        <p><strong>Autor:</strong> Alfredo Marcos</p>
+        <p><strong>Editorial:</strong> Desconocida</p>
+        <p><strong>Enlace:</strong> <a class="linklibro" href="https://infolibros.org/pdfview/6933-filosofia-de-la-naturaleza-humana-alfredo-marcos/">Link</a></p>
+      <p class="description"><strong>Descripción:</strong> El concepto de naturaleza humana cuenta con una larga y polémica tradición filosófica. Algunos pensadores han negado directamente que tal cosa exista. Incluso podríamos decir que esta negación ha sido la moda intelectual dominante durante una buena parte del pasado siglo.</p>
+      <div class="rating">
+        <div class="star" data-value="1"></div>
+        <div class="star" data-value="2"></div>
+        <div class="star" data-value="3"></div>
+        <div class="star" data-value="4"></div>
+        <div class="star" data-value="5"></div>
+        <span id="average-rating">0</span>
+      </div>
+    </div>
+  </div>
+
+   
+  <!-- Comentarios -->
+  <div class="comentarios">
+    <!-- Formulario para agregar un comentario -->
+    <form id="formComentario">
+        <textarea id="comentarioInput" placeholder="Escribe tu comentario..."></textarea>
+        <div id="contadorLetras">0 caracteres</div>
+        <button type="submit">Comentar</button>
+        <button type="button" id="cancelarBtn" class="cancelacion">Cancelar</button>
+    </form>
+
+    <!-- Lista de comentarios -->
+    <ul id="listaComentarios">
+       
+    </ul>
+  </div>
+</main>
+
+<div id="footer"></div>
+<script src="/mapa-de-suenos/todohh/script.js"></script>   
+<script src="../script.js"></script>  
+</body>
+</html>

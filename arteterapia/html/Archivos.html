@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/archivo.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Explorar</title>
+    <script src="/FootNav/footNav.js"></script>
+    <link rel="stylesheet" href="/FootNav/footNav.css"> 
+  <link rel="stylesheet" href="../component/explore-section/explore-section.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+
+</head>
+
+<body class="body">
+
+    <header id="header-placeholder"></header>
+
+  <div id="explore-section-placeholder"></div>
+    
+    
+  <div class="center">
+    <h2>Archivos</h2>
+</div>
+        <main class="main-content">
+
+            
+            <div class="container">
+                <div class="item">
+                    <div class="bloque">
+                        <a href="MisDibujos.html">
+                            <img src="https://img.freepik.com/psd-gratis/ilustracion-carpeta-archivos-isoltada_23-2151439694.jpg?t=st=1720838323~exp=1720841923~hmac=9efbd168117ca131bba283234e6a7daa0d2e58daca64bb01e205ccb8632577fa&w=996" alt="Plantilla">
+                        </a>
+                    </div>
+                    <p>Dibujos</p>
+                </div>
+                <div class="item">
+                    <div class="bloque">
+                        <a href="MisPinturas.html">
+                            <img src="https://img.freepik.com/psd-gratis/ilustracion-carpeta-archivos-isoltada_23-2151439694.jpg?t=st=1720838323~exp=1720841923~hmac=9efbd168117ca131bba283234e6a7daa0d2e58daca64bb01e205ccb8632577fa&w=996" alt="Plantilla">
+                        </a>
+                    </div>
+                    <p>Pinturas</p>
+                </div>
+                <div class="item">
+                    <div class="bloque">
+                        <a href="Favoritos.html">
+                            <img src="https://img.freepik.com/psd-gratis/ilustracion-carpeta-archivos-isoltada_23-2151439694.jpg?t=st=1720838323~exp=1720841923~hmac=9efbd168117ca131bba283234e6a7daa0d2e58daca64bb01e205ccb8632577fa&w=996" alt="Plantilla">
+                        </a>
+                    </div>
+                    <p>Favoritos</p>
+                </div>
+            </div>
+
+
+
+    
+
+
+    </main>
+    <footer class="footer"> <div id="footer-placeholder"></div> </footer>
+    
+<!--  -->
+<script>
+
+    var grid = document.querySelector('.main-content');
+        var msnry = new Masonry(grid, {
+            itemSelector: '.card',
+            columnWidth: '.card',
+            percentPosition: true
+    });
+    document.addEventListener('click', function(event) {
+      const details = document.querySelectorAll('.card details');
+      details.forEach((detail) => {
+        if (!detail.contains(event.target)) {
+          detail.removeAttribute('open');
+        }
+      });
+    });
+    function toggleContent(card) {
+    const content = card.querySelector('.options');
+    const isVisible = content.style.display === 'block';
+    const allContents = document.querySelectorAll('.options');
+    allContents.forEach((item) => {
+        item.style.display = 'none';
+        item.parentElement.parentElement.style.height = 'auto'; 
+    });
+    content.style.display = isVisible ? 'none' : 'block';
+
+    // Ajusta la altura de la tarjeta
+    if (isVisible) {
+        card.style.height = 'auto'; 
+    } else {
+        const contentHeight = content.offsetHeight; // Altura del contenido
+        const imgHeight = card.querySelector('img').offsetHeight; // Altura de la imagen
+        card.style.height = `${contentHeight + imgHeight}px`; // Ajusta la altura total
+    }
+
+    // Reorganiza el layout de Masonry
+    const grid = document.querySelector('.main-content');
+    const msnry = new Masonry(grid, {
+        itemSelector: '.card',
+        columnWidth: '.card',
+        percentPosition: true,
+    });
+    msnry.layout(); // Reorganiza los elementos
+}
+  </script> 
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffcfc;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    overflow-y: auto;
+    height: calc(100vh - 180px);
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--violeta-suave);
+    border-radius: 5% 5% 5% 5%;
+    padding: 10px;
+    gap: 20px;
+    height: 100%;
+}
+
+.sidebar .options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sidebar .options button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+.sidebar .options button:hover {
+    transform: scale(1.15);
+}
+
+.color-picker{
+    display: flex;
+    align-items: center;
+}
+
+.color-palette {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.color {
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 auto;
+}
+
+.painting{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.canvas {
+    border: 1px solid black;
+    border-radius: 10%;
+    width: 100%;
+    height: auto;
+}
+
+.canvas img {
+    width: 100%;
+    height: auto;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.actions button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+@media (max-width: 770px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .main {
+        width: 100%;
+    }
+
+    .sidebar {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sidebar .options {
+        flex-direction: row;
+    }
+
+    .color-picker {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .color-palette {
+        flex-direction: row;
+    }
+
+}
+
+@media (max-width: 40px) {
+    .main {
+        width: 100%;
+    }
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .options {
+        flex-direction: row;
+    }
+
+    .color-palette {
+        flex-direction: column;
+    }
+}
+
+:root {
+    --violeta-suave: #f4c4fa;
+}

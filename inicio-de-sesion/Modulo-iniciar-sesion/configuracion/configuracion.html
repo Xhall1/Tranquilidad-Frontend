@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuracion</title>
+    <script src="/FootNav/footNav.js"></script>
+    <link rel="stylesheet" href="/FootNav/footNav.css">
+    <link rel="stylesheet" href="configuracion.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../headeryfooter/Style.css">
+</head>
+
+<body>
+    <script>
+        async function includeHTML() {
+            const elements = document.querySelectorAll('[include-html]');
+            for (let el of elements) {
+                const file = el.getAttribute('include-html');
+                try {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        el.innerHTML = await response.text();
+                        // Cargar el JS del footer después de insertarlo
+                        if (file.includes("header.html")) {
+                            const script = document.createElement("scrnjm9ipt");
+                            script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                            document.body.appendChild(script);
+                        }
+                    } else {
+                        el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                    }
+                } catch (error) {
+                    el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+                }
+            }
+        }
+        document.addEventListener("DOMContentLoaded", includeHTML);
+    </script>
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+    <div class="marca-agua">
+    <main class="contenido">
+        <aside class="configuracion-menu">
+            <ul>
+                <li>
+                    <a href="#notificaciones" class="menu-item">
+                        <span class="icono-config" class="menu-item"><img src="imagenes/notificacion.png"
+                                alt="Icono Configuración"></span>
+                        Notificaciones
+                        <span class="arrow">&gt;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#privacidad" class="menu-item">
+                        <span class="icono-config"><img src="imagenes/privacidad.png" alt="Icono Ayuda"></span>
+                        Privacidad
+                        <span class="arrow">&gt;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#idioma" class="menu-item">
+                        <span class="icono-config"><img src="imagenes/idioma.png" alt="Icono Pantalla"></span>
+                        Idioma
+                        <span class="arrow">&gt;</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contraseña" class="menu-item">
+                        <span class="icono-config"><img src="imagenes/contraseña.png" alt="Icono Pantalla"></span>
+                        Contraseña
+                        <span class="arrow">&gt;</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+      
+        <section class="configuracion-contenido">
+            <div id="notificaciones" class="config-item">
+                <h2>Notificaciones</h2>
+                <form action="/actualizarNotificaciones" method="POST">
+                    <label for="notificaciones">Notificaciones:</label>
+                    <select id="notificaciones" name="notificaciones">
+                        <option value="todos">Todos</option>
+                        <option value="mencion">Solo menciones</option>
+                        <option value="ninguno">Ninguno</option>
+                    </select>
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </div>
+
+            <div id="privacidad" class="config-item">
+                <h2>Privacidad</h2>
+                <form action="/actualizarPrivacidad" method="POST">
+                    <label for="privacidad">Privacidad:</label>
+                    <select id="privacidad" name="privacidad">
+                        <option value="publico">Público</option>
+                        <option value="privado">Privado</option>
+                        <div class="inputGrupo genero" style="display: inline-flex; justify-content: center;">
+                            <label>
+                                <input1 class="radio" type="radio" name="genero" value="Mujer"> Mujer
+                            </label>
+                            <label>
+                                <input1 class="radio" type="radio" name="genero" value="Hombre"> Hombre
+                            </label>
+                        </div>
+                    </select>
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </div>
+
+            <div id="idioma" class="config-item">
+                <h2>Idioma</h2>
+                <form action="/actualizarIdioma" method="POST">
+                    <label for="idioma">Idioma:</label>
+                    <select id="idioma" name="idioma">
+                        <option value="es">Español</option>
+                        <option value="en">Inglés</option>
+                       
+                    </select>
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </div>
+            <div id="contraseña" class="config-item">
+                <h2>Contraseña</h2>
+                <form action="/actualizarContraseña" method="POST" class="formulario-contraseña">
+                    <div class="campo-contraseña">
+                        <label for="actual">Contraseña actual</label>
+                        <input type="password" id="actual" name="actual" placeholder="*****">
+                    </div>
+                    <div class="campo-contraseña">
+                        <label for="nueva">Contraseña nueva</label>
+                        <input type="password" id="nueva" name="nueva" placeholder="*****">
+                    </div>
+                    <div class="campo-contraseña">
+                        <label for="confirmar">Confirmar contraseña</label>
+                        <input type="password" id="confirmar" name="confirmar" placeholder="*****">
+                    </div>
+                    <button type="submit" class="boton-actualizar">Actualizar contraseña</button>
+                </form>
+            </div>
+
+        </section>
+    </main>
+</div>
+    <!-- footer -->
+    <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+   
+    <script src="/inicio-de-sesion/Modulo-iniciar-sesion/configuracion/configuracion.js"></script>
+</body>
+
+</html>

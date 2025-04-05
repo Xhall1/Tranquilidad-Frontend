@@ -1,0 +1,40 @@
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 160px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('../inclued/ALIMENTACION22.jpg') no-repeat center center fixed; /* Marca de agua */
+    background-size: cover; /* Imagen cubre toda la pantalla */
+    background-blend-mode: overlay; /* Mezcla la imagen con el color de fondo */
+    background-color: rgba(255, 245, 220, 0.8); /* Fondo translúcido */
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+button {
+    background-color: #59009A;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+

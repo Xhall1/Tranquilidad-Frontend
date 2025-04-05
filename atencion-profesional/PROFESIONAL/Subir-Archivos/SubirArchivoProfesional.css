@@ -1,0 +1,148 @@
+
+
+
+/* contenido body */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/papeleo.png'); /* Cambia por la ruta de tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
+  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
+  background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con transparencia */
+  background-blend-mode: overlay; /* Mezcla el color con la imagen */
+}
+
+main {
+  padding: 1.25rem;
+}
+
+.hero h2 {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.hero p {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.servicios1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.servicio {
+  width: 18.75rem;
+  height: 18.75rem;
+  text-align: center;
+  margin: 1.25rem;
+  padding: 1.25rem;
+  border: 0.0625rem solid #59009A;
+  transition: transform 0.3s ease;
+}
+
+.servicio:hover {
+  transform: scale(1.1);
+}
+
+.servicio img {
+  width: 6.25rem;
+  margin-bottom: 0.625rem;
+}
+
+.servicio h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.625rem;
+}
+
+.servicio p {
+  font-size: 1rem;
+}
+
+.subir-nuevo {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 100px;
+}
+
+.subir-nuevo {
+  text-align: center;
+  margin-top: 2.5rem;
+  display: block;
+  padding: 0.625rem 1.875rem;
+  background-color: #59009A;
+  color: #fff;
+  border: none;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 42.625rem;
+}
+
+.cargar-archivo {
+  width: 0.625rem;
+  height: 5.625rem;
+}
+
+.subir-nuevo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+
+
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .servicio {
+      width: calc(50% - 2.5rem); /* 50% menos el margen */
+      height: auto; /* Ajustar automáticamente la altura */
+  }
+}
+
+@media (max-width: 768px) {
+  .servicio {
+      width: calc(100% - 2.5rem); /* 100% menos el margen */
+      margin: 1.25rem 0; /* Margen vertical */
+  }
+
+  .servicio img {
+      width: 5rem; /* Ajustar el tamaño de la imagen */
+  }
+
+  .servicio h3 {
+      font-size: 1.125rem; /* Ajustar el tamaño del título */
+  }
+
+  .servicio p {
+      font-size: 0.875rem; /* Ajustar el tamaño del texto */
+  }
+
+  .subir-nuevo {
+      padding: 0.5rem 1.5rem; /* Ajustar el tamaño del botón */
+      margin-left: auto; /* Centrar el botón */
+      margin-right: auto; /* Centrar el botón */
+      display: block; /* Asegura que el botón sea tratado como bloque */
+  }
+
+}
+
+
+

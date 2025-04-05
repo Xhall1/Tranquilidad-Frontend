@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="../Stylee.css">
+  <link rel="stylesheet" href="/mapa-de-suenos/todohh/style.css">
+  <link rel="stylesheet" href="/mapa-de-suenos/todohh/inicio/styles.css">
+
+  <title>Mapa de sueños</title>
+  <style>
+
+  </style>
+</head>
+<body>
+ <div id="header"></div>
+ 
+<main class="main">
+  <div class="book">
+    <img src="https://m.media-amazon.com/images/I/410yVPIXgZL._AC_UF894,1000_QL80_.jpg" alt="The Picture of Dorian Gray">
+    <div class="book-info">
+        <h1>Historia del arte de la antigua edad media </h1>
+        <p><strong>Autor:</strong>María Teresa González Vicario </p>
+        <p><strong>Editorial:</strong> Universitaria Ramon Areces</p>
+        <p><strong>Enlace:</strong> <a class="linklibro" href="https://es.pdfdrive.com/historia-del-arte-clásico-en-la-antigüedad-e158239726.html">Link</a></p>
+      <p class="description"><strong>Descripción:</strong> La obra reflexiona sobre la producción artística del periodo histórico que va desde la ruptura y descomposición de la unidad que había supuesto el Imperio romano hasta la formación de otra gran unidad, no política, pero si artística y religiosa: la Europa románica. Al mismo tiempo que en el Mediterráneo oriental se desarrolla la civilización bizantina y se expande prodigiosamente el Islam, el occidente europeo atraviesa una fase crítica y convulsa: la Antigua Edad Media. El libro destaca cómo frente a la dispersión y escasa producción artística del tiempo prerrománico, el Románico muestra una amplia difusión por todos los rincones de la geografía europea, considerándose el primer arte internacional.
+
+</p>
+      <div class="rating">
+        <div class="star" data-value="1"></div>
+        <div class="star" data-value="2"></div>
+        <div class="star" data-value="3"></div>
+        <div class="star" data-value="4"></div>
+        <div class="star" data-value="5"></div>
+        <span id="average-rating">0</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Comentarios -->
+  <div class="comentarios">
+    <!-- Formulario para agregar un comentario -->
+    <form id="formComentario">
+        <textarea id="comentarioInput" placeholder="Escribe tu comentario..."></textarea>
+        <div id="contadorLetras">0 caracteres</div>
+        <button type="submit">Comentar</button>
+        <button type="button" id="cancelarBtn" class="cancelacion">Cancelar</button>
+    </form>
+
+    <!-- Lista de comentarios -->
+    <ul id="listaComentarios">
+       
+    </ul>
+  </div>
+</main>
+<div id="footer"></div>
+<script src="/mapa-de-suenos/todohh/script.js"></script>  
+<script src="../script.js"></script>  
+</body>
+</html>

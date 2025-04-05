@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Document</title>
+    <script>
+        async function includeHTML() {
+            const elements = document.querySelectorAll('[include-html]');
+            for (let el of elements) {
+                const file = el.getAttribute('include-html');
+                try {
+                    const response = await fetch(file);
+                    if (response.ok) {
+                        el.innerHTML = await response.text();
+                        // Cargar el JS del footer después de insertarlo
+                        if (file.includes("header.html")) {
+                            const script = document.createElement("script");
+                            script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                            document.body.appendChild(script);
+                        }
+                    } else {
+                        el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                    }
+                } catch (error) {
+                    el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+                }
+            }
+        }
+        document.addEventListener("DOMContentLoaded", includeHTML);
+    </script>
+  
+    <link rel="stylesheet" href="/rutinas-de-ejercicios/andres/ejercicios/style.css">
+</head>
+<body>
+    <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+    <div class="marca-agua">
+      <main>
+        <div class="card-container">
+            <div class="card">
+                <a href="/rutinas-de-ejercicios/detalles2/index.html">
+                <img src="/rutinas-de-ejercicios/meditacion/imagenes/female-meditating-indoor-portrait.jpg" alt="" class="refe">
+            
+                <h2> Meditación de Atención Plena</h2>
+                <p>05:00 </p>
+            </a>
+        
+            </div>
+            <div class="card">
+                <a href="/rutinas-de-ejercicios/detalles3/index.html">
+                <img src="/rutinas-de-ejercicios/meditacion/imagenes/full-shot-woman-meditating.jpg" alt="" class="refe">
+                <h2>Meditación del Sonido</h2>
+                <p>05:00 </p>
+                <br>
+            </a>
+
+                
+            </div>
+            <div class="card">
+                <a href="/rutinas-de-ejercicios/detalles5/index.html">
+                <img src="/rutinas-de-ejercicios/meditacion/imagenes/beautiful-girl-study-online.jpg" class="refe">
+                <h2>Meditación de Escritura</h2>
+                <p>05:00 </p>
+                </a>
+                
+            </div>
+            <div class="card">
+                <a href="/rutinas-de-ejercicios/detalles6/index.html">
+                <img src="/rutinas-de-ejercicios/meditacion/imagenes/como-sesiones-terapia-holistica-integran-ia-generativa-mente-cuerpo_1169665-125004.jpg" alt="" class="refe">
+                <h2>Meditación de la Llama de una Vela</h2>
+                <p>05:00 </p>
+               </a>
+            </div>
+            <div class="go">
+              <a href="/rutinas-de-ejercicios/reproMeditacion/index.html">
+          <button class="boton">Comenzar</button>
+      </a>
+      </div>
+            
+        </div>
+        
+    </a>
+    </div>
+</div>
+    </main>
+    
+    
+    <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+</body>
+</html>

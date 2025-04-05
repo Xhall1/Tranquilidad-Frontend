@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/rutinas-de-ejercicios/detalles/detalles.css">
+  <script>
+    async function includeHTML() {
+        const elements = document.querySelectorAll('[include-html]');
+        for (let el of elements) {
+            const file = el.getAttribute('include-html');
+            try {
+                const response = await fetch(file);
+                if (response.ok) {
+                    el.innerHTML = await response.text();
+                    // Cargar el JS del footer después de insertarlo
+                    if (file.includes("header.html")) {
+                        const script = document.createElement("script");
+                        script.src = "/rutinas-de-ejercicios/includes/Header/script.js";
+                        document.body.appendChild(script);
+                    }
+                } else {
+                    el.innerHTML = "<p>Error al cargar el contenido.</p>";
+                }
+            } catch (error) {
+                el.innerHTML = "<p>Error de conexión al cargar el contenido.</p>";
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", includeHTML);
+</script>
+
+  <title>Rutinas de Ejercicios</title>
+</head>
+<body>
+  <div include-html="/rutinas-de-ejercicios/includes/Header/header.html"></div>
+
+
+      <div class="cont">
+        <div class="contenedor">
+          <div class="guia">
+          <video autoplay muted controls width="640" height="360" class="gui">
+            <source src="/rutinas-de-ejercicios/reproMeditacion/video/sonido.mp4" type="video/mp4">
+            <source src="mi-video.ogg" type="video/ogg">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+        <button class="boton" onclick="toggleInstrucciones()">Instrucciones</button>
+      </div>
+          <div class="instruccines">
+          <h2> <span class="title">Instrucciones</span></h2>
+          <ul class="lista">
+              <li class="one">Encuentra un lugar cómodo y tranquilo.</li>
+              
+              <li>Siéntate o acuéstate en una posición relajada.
+              </li>
+              
+              <li>Puede ser música suave, sonidos de la naturaleza o un cuenco tibetano.</li>
+              
+              <li>Asegúrate de que el sonido sea constante y relajante.</li>
+              <li>Cierra los ojos y enfoca tu atención completamente en el sonido.</li>
+              <li>Deja que el sonido te envuelva y guíe tu mente.</li>
+              <li>Si tu mente divaga, simplemente vuelve tu atención al sonido.
+                .</li>
+              <li>No intentes controlar tus pensamientos, solo obsérvalos.
+              </li>
+              <li>Gradualmente, trae tu atención de vuelta a tu cuerpo y al entorno.
+                .</li>
+                <li>Abre los ojos lentamente y tómate un momento para sentirte presente.
+                    .</li>  
+
+             
+          </ul>
+         
+      </div>
+     
+      </div>
+      </div>
+      <main>
+        <div class="Recomendaciones">
+        <h2>Recomendaciones de Meditacion</h2>
+    </div>
+        <div class="video-carousel">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/IShkpOm63gg
+            " 
+                    title="Estiramiento 1" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/nAR2PUPyH1I" 
+                    title="Estiramiento 2" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/U2dnwLuHE6w" 
+                    title="Estiramiento 3" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/vr7oKogGLeM" 
+                    title="Estiramiento 4" allowfullscreen></iframe>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/KxRpK9ZGq4Y" 
+                    title="Estiramiento 4" allowfullscreen></iframe>
+          </div>
+        
+    </main>
+      <div include-html="/rutinas-de-ejercicios/includes/inicio/inicio.html"></div>
+      
+      <script src="/rutinas-de-ejercicios/detalles/script.js"></script>
+    </body>
+    </html>

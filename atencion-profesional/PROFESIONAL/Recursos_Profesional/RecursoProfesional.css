@@ -1,0 +1,240 @@
+
+
+
+/* contenido body */
+
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+
+}
+
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+.body {
+  padding: 1.25rem;
+  /* 20px */
+}
+
+.text h1 {
+  margin: 0;
+  color: #59009A;
+  font-size: 1.75rem;
+  /* Tamaño más pequeño para pantallas móviles */
+}
+
+.text p {
+  margin: 0;
+  color: #999;
+  font-size: 1rem;
+  /* Texto un poco más grande */
+}
+
+main {
+  padding: 2rem;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/apartado-cita.png'); /* Cambia por la ruta de tu imagen */
+  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
+  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
+  background-color: rgba(255, 255, 255, 0.8); /* Color de fondo blanco con transparencia */
+  background-blend-mode: overlay; /* Mezcla el color con la imagen */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Cambiar según sea necesario */
+  gap: 2rem;
+  /* Aumentar el gap para mayor separación */
+}
+
+.grid-item {
+  color: #59009A;
+  width: calc(100% - 2rem);
+  /* Restar el margen del ancho */
+  height: auto;
+  margin: 1rem;
+  /* Ajusta este valor para mayor o menor separación */
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 0.5rem;
+  /* 8px */
+  position: relative;
+  border: 0.125rem solid #59009A;
+  /* 2px */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  gap: 10px;
+}
+
+.grid-item::before {
+  content: '';
+  position: absolute;
+  top: -1.25rem;
+  /* -20px */
+  left: -1.25rem;
+  /* -20px */
+  width: 6.25rem;
+  /* 100px */
+  height: 6.25rem;
+  /* 100px */
+  background-color: #59009A;
+  border-radius: 50%;
+  z-index: -1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover::before {
+  transform: scale(1.5);
+}
+
+.grid-item:hover {
+  transform: scale(1.1);
+  font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.grid-item.archivos {
+  background-image: url('../Imagenes/WhatsApp.png');
+}
+
+.grid-item.informes {
+  background-image: url('Informes.png');
+}
+
+.grid-item.resenas {
+  background-image: url('Reseñas.png');
+}
+
+.grid-item.historial {
+  background-image: url('Historial.png');
+}
+
+.grid-item.proximamente1 {
+  background-image: url('Proximamente.png');
+}
+
+.grid-item.proximamente2 {
+  background-image: url('Proximamente.png');
+}
+
+
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+    padding: 0.625rem;
+    /* 10px */
+  }
+
+
+  main {
+    padding: 4.375rem;
+    /* 70px */
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    /* Mayor separación para pantallas más pequeñas */
+  }
+
+  .grid-item {
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    height: auto;
+    /* Ajusta la altura automáticamente */
+    font-size: 1.1em;
+    /* Reduce un poco el tamaño de la fuente */
+  }
+
+  .text h1 {
+    font-size: 1.5rem;
+  }
+
+  .text p {
+    font-size: 0.875rem;
+  }
+
+  .ball {
+    width: 40px; /* Reduce el tamaño de las bolas en pantallas pequeñas */
+    height: 40px;
+  }
+
+
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 1.25rem;
+    /* 20px */
+  }
+
+  main {
+    padding: 6.25rem;
+    /* 100px */
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    /* Mantener el gap entre los elementos */
+  }
+
+  .grid-item {
+    height: auto;
+    /* Ajusta la altura automáticamente */
+    font-size: 1.15em;
+    /* Un poco más grande que en pantallas pequeñas */
+  }
+
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1025px) {
+  main {
+    padding: 8.75rem;
+    /* 140px */
+  }
+
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    /* Tres columnas en pantallas grandes */
+  }
+
+  .grid-item {
+    height: 12.5rem;
+    /* 200px */
+  }
+}
+
+
+
+
+
+
